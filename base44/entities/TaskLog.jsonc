@@ -1,0 +1,44 @@
+{
+  "name": "TaskLog",
+  "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "title": "Task"
+    },
+    "cycle_id": {
+      "type": "string",
+      "title": "Cycle"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Date"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "title": "Completed"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Completed at"
+    }
+  },
+  "required": [
+    "task_id",
+    "date"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

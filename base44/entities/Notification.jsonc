@@ -1,0 +1,57 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "meeting",
+        "score",
+        "recovery",
+        "task"
+      ],
+      "title": "Type"
+    },
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body"
+    },
+    "link": {
+      "type": "string",
+      "title": "App route to open when clicked"
+    },
+    "meet_link": {
+      "type": "string",
+      "title": "Google Meet link"
+    },
+    "ref_id": {
+      "type": "string",
+      "title": "Dedup key"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false,
+      "title": "Read"
+    }
+  },
+  "required": [
+    "type",
+    "title",
+    "link"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

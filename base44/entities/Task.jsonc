@@ -1,0 +1,69 @@
+{
+  "name": "Task",
+  "type": "object",
+  "properties": {
+    "cycle_id": {
+      "type": "string",
+      "title": "Cycle"
+    },
+    "goal_id": {
+      "type": "string",
+      "title": "Goal"
+    },
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "recurrence_type": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "one_time"
+      ],
+      "default": "daily",
+      "title": "Recurrence"
+    },
+    "weekdays": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "title": "Selected weekdays (0=Sun..6=Sat)"
+    },
+    "target_time": {
+      "type": "string",
+      "title": "Target time (HH:MM)"
+    },
+    "duration_minutes": {
+      "type": "number",
+      "title": "Duration (minutes)"
+    },
+    "one_time_date": {
+      "type": "string",
+      "format": "date",
+      "title": "One-time date"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "title": "Active"
+    }
+  },
+  "required": [
+    "cycle_id",
+    "title",
+    "recurrence_type"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

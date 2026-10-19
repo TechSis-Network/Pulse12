@@ -1,0 +1,40 @@
+{
+  "name": "AccountabilityPartner",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Partner name"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "booking_url": {
+      "type": "string",
+      "title": "Booking calendar link"
+    },
+    "weekday": {
+      "type": "number",
+      "title": "Recurring accountability day (0=Sun..6=Sat)"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

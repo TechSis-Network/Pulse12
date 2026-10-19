@@ -1,0 +1,57 @@
+{
+  "name": "WeeklyScore",
+  "type": "object",
+  "properties": {
+    "cycle_id": {
+      "type": "string",
+      "title": "Cycle"
+    },
+    "week_number": {
+      "type": "number",
+      "title": "Week number"
+    },
+    "planned_count": {
+      "type": "number",
+      "default": 0,
+      "title": "Planned instances"
+    },
+    "completed_count": {
+      "type": "number",
+      "default": 0,
+      "title": "Completed instances"
+    },
+    "score": {
+      "type": "number",
+      "title": "Score (%)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "green",
+        "amber",
+        "no_planned"
+      ],
+      "title": "Status"
+    },
+    "calculated_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Calculated at"
+    }
+  },
+  "required": [
+    "cycle_id",
+    "week_number"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "CalendarSync",
+  "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "title": "Task"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Date"
+    },
+    "event_id": {
+      "type": "string",
+      "title": "Google Calendar event ID"
+    },
+    "calendar_id": {
+      "type": "string",
+      "title": "Calendar ID"
+    },
+    "synced_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Synced at"
+    }
+  },
+  "required": [
+    "task_id",
+    "date",
+    "event_id"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

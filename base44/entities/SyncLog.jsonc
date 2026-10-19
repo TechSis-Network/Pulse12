@@ -1,0 +1,45 @@
+{
+  "name": "SyncLog",
+  "type": "object",
+  "properties": {
+    "partner_id": {
+      "type": "string",
+      "title": "Partner"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "title": "Session date"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Summary"
+    },
+    "wins": {
+      "type": "string",
+      "title": "Wins"
+    },
+    "blockers": {
+      "type": "string",
+      "title": "Blockers"
+    },
+    "commitments": {
+      "type": "string",
+      "title": "Commitments for next sync"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
